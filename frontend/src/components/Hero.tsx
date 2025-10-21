@@ -13,7 +13,10 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[var(--color-background-primary)] to-[var(--color-background-secondary)]">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-ivory-sand to-white">
+      {/* Semi-transparent gradient overlay to keep imagery visible but text legible */}
+      <div className="absolute inset-0 bg-hero-overlay"></div>
+
       {/* Subtle Kenyan Textile Pattern Background */}
       <div
         className="absolute inset-0 opacity-10"

@@ -176,15 +176,16 @@ const LandingPage: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-12 gap-8">
             {features.map((feature, index) => (
-              <FeatureCard
-                key={feature.title}
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-                index={index}
-              />
+              <div key={feature.title} className="col-span-12 md:col-span-6 lg:col-span-4">
+                <FeatureCard
+                  icon={feature.icon}
+                  title={feature.title}
+                  description={feature.description}
+                  index={index}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -246,8 +247,8 @@ const LandingPage: React.FC = () => {
       {/* Footer */}
       <footer className="bg-deep-charcoal text-gray-300 py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-6 lg:col-span-3">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sunset-amber to-savannah-gold flex items-center justify-center text-white font-bold">
                   H
@@ -258,8 +259,8 @@ const LandingPage: React.FC = () => {
                 Preserving the past. Empowering the future through the power of AI and storytelling.
               </p>
             </div>
-            
-            <div>
+
+            <div className="col-span-12 md:col-span-6 lg:col-span-3">
               <h4 className="text-white font-medium mb-4">Explore</h4>
               <ul className="space-y-2">
                 {['Home', 'Timeline', 'AR Tour', 'Stories'].map((item) => (
@@ -271,8 +272,8 @@ const LandingPage: React.FC = () => {
                 ))}
               </ul>
             </div>
-            
-            <div>
+
+            <div className="col-span-12 md:col-span-6 lg:col-span-3">
               <h4 className="text-white font-medium mb-4">Resources</h4>
               <ul className="space-y-2">
                 {['Blog', 'Documentation', 'Guides', 'API'].map((item) => (
@@ -284,17 +285,17 @@ const LandingPage: React.FC = () => {
                 ))}
               </ul>
             </div>
-            
-            <div>
+
+            <div className="col-span-12 md:col-span-6 lg:col-span-3">
               <h4 className="text-white font-medium mb-4">Connect</h4>
               <p className="text-sm text-gray-400 mb-4">
                 Follow us on social media for the latest updates and stories.
               </p>
               <div className="flex space-x-4">
                 {['Twitter', 'Instagram', 'LinkedIn', 'YouTube'].map((social) => (
-                  <a 
+                  <a
                     key={social}
-                    href="#" 
+                    href="#"
                     className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-300 hover:text-white transition-colors"
                     aria-label={social}
                   >

@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
-import { 
-  FiArrowRight as FiArrowRightIcon, 
-  FiCompass as FiCompassIcon, 
-  FiBookOpen as FiBookOpenIcon, 
-  FiGlobe as FiGlobeIcon, 
-  FiAward as FiAwardIcon, 
-  FiMap as FiMapIcon, 
+import {
+  FiArrowRight as FiArrowRightIcon,
+  FiCompass as FiCompassIcon,
+  FiBookOpen as FiBookOpenIcon,
+  FiGlobe as FiGlobeIcon,
+  FiAward as FiAwardIcon,
+  FiMap as FiMapIcon,
   FiUsers as FiUsersIcon,
   FiClock as FiClockIcon,
   FiMessageSquare as FiMessageSquareIcon,
-  FiCheckCircle as FiCheckCircleIcon 
+  FiCheckCircle as FiCheckCircleIcon
 } from 'react-icons/fi';
+import Hero from './Hero';
+import '../styles/tokens.css';
 
 // Animation variants
 const container: Variants = {
@@ -153,51 +155,8 @@ const LandingPage: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-radial from-sunset-amber/5 to-transparent rounded-full"></div>
       </div>
 
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="max-w-4xl mx-auto text-center"
-            variants={fadeIn}
-            initial="hidden"
-            animate="show"
-          >
-            <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6"
-              variants={item}
-            >
-              <span className="text-deep-charcoal dark:text-ivory-sand">Discover </span>
-              <span className="text-gradient">Africa's Rich Heritage</span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed"
-              variants={item}
-            >
-              Journey through time with our interactive platform that brings African history to life through AI-powered storytelling, immersive 3D experiences, and authentic cultural insights.
-            </motion.p>
-            
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              variants={item}
-            >
-              <Link 
-                to="/chat" 
-                className="btn btn-primary group"
-              >
-                Start Exploring
-                <FiArrowRightIcon className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link 
-                to="/timeline" 
-                className="btn btn-secondary dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-700"
-              >
-                View Timeline
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      {/* New Hero Section */}
+      <Hero />
 
       {/* Features Section */}
       <section className="py-20 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">

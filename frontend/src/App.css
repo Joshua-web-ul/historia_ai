@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+.App {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+  min-height: 100vh;
+  color: #374151;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-noto {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* African Cultural Theme */
+.african-bg {
+  background-image: radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, rgba(210, 105, 30, 0.1) 0%, transparent 50%);
+  background-size: 100px 100px;
+}
+
+.tribal-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D2691E' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.chat-container, .timeline-container, .ar-tour-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.chat-card {
+  background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 50%, #DEB887 100%);
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+  padding: 0;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 25px 25px 0 0;
+  position: relative;
+  text-align: center;
+}
+
+.chat-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm0-30c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm30 30c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+  border-radius: 25px 25px 0 0;
+}
+
+.chat-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.chat-header p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.language-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.language-selector select {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.language-selector select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0;
+  padding: 20px;
+  background: white;
+  border-radius: 0 0 25px 25px;
+}
+
+.message-input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #D2691E;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: #FFF8DC;
+  resize: vertical;
+  min-height: 60px;
+  transition: all 0.2s;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: #8B4513;
+  box-shadow: 0 0 15px rgba(210, 105, 30, 0.4);
+}
+
+.send-button {
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.send-button:hover {
+  background: linear-gradient(135deg, #A0522D 0%, #CD853F 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.5);
+}
+
+.voice-button {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #8B4513;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voice-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+}
+
+.voice-button.recording {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.response-area {
+  background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 400px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+  overflow-y: auto;
+  margin: 20px;
+  max-height: 500px;
+}
+
+.ai-message {
+  background: linear-gradient(135deg, #D2691E 0%, #CD853F 100%);
+  color: white;
+  border-radius: 20px 20px 20px 5px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+  animation: fadeIn 0.5s ease-in;
+}
+
+.ai-message::before {
+  content: 'HISTORIA:';
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.user-message {
+  background: linear-gradient(135deg, #228B22 0%, #32CD32 100%);
+  color: white;
+  border-radius: 20px 20px 5px 20px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  max-width: 70%;
+  box-shadow: 0 5px 15px rgba(34, 139, 34, 0.3);
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sidebar {
+  background: linear-gradient(135deg, #F5DEB3 0%, #DEB887 100%);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+  height: fit-content;
+}
+
+.timeline-item {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid #D2691E;
+  box-shadow: 0 2px 5px rgba(139, 69, 19, 0.1);
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+  height: 400px;
+}
+
+.daily-fact {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #8B4513;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(210, 105, 30, 0.9) 100%),
+              url('https://images.unsplash.com/photo-1547471080-7cc8555ca1f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+.hero-banner h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-banner p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
